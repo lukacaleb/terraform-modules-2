@@ -14,8 +14,8 @@ resource "aws_instance" "instance" {
               sudo apt-get install docker.io -y
               sudo systemctl start docker
               sudo systemctl enable docker
-              docker pull ansible/ansible:latest
-              docker run -dit --name ansible_container -v ~/terraform-modules-2:/ansible/playbooks ansible/ansible:latest /bin/bash
+              sudo docker pull ansible/ansible:latest
+              sudo docker run -dit --name ansible_container -v ~/terraform-modules-2:/ansible/playbooks ansible/ansible:latest /bin/bash
               EOF
 
   tags = {
